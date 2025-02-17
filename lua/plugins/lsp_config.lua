@@ -12,7 +12,7 @@ return {
         config = function()
             -- ensure that we have lua language server, typescript launguage server, java language server, and java test language server are installed
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "ts_ls", "jdtls", "clangd" },
+                ensure_installed = { "lua_ls", "ts_ls", "jdtls", "clangd", 'pyright' },
             })
         end
     },
@@ -51,6 +51,9 @@ return {
                 capabilities = capabilities,
             })
 
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
             lspconfig.clangd.setup({})
 
             -- Set vim motion for <Space> + c + h to show code documentation about the code the cursor is currently over if available
