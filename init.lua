@@ -2,6 +2,7 @@
 require("core.options")
 require("core.keymaps")
 require("core.autocmds")
+require("core.float_term")
 
 -- Install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
