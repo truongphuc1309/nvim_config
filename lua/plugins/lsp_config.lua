@@ -16,6 +16,25 @@ return {
 			})
 		end,
 	},
+
+	-- mason lsp config utilizes mason to automatically ensure linter, formatter you want installed are installed
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			local mason_tool_installer = require("mason-tool-installer")
+			mason_tool_installer.setup({
+				ensure_installed = {
+					"prettier", -- prettier formatter
+					"stylua", -- lua formatter
+					"isort", -- python formatter
+					"black", -- python formatter
+					"pylint",
+					"eslint_d",
+				},
+			})
+		end,
+	},
+
 	-- mason nvim dap utilizes mason to automatically ensure debug adapters you want installed are installed, mason-lspconfig will not automatically install debug adapters for us
 	{
 		"jay-babu/mason-nvim-dap.nvim",
@@ -51,10 +70,10 @@ return {
 				capabilities = capabilities,
 			})
 
-            -- lsp for tailwindcss
-            lspconfig.tailwindcss.setup({
-                capabilities = capabilities,
-            })
+			-- lsp for tailwindcss
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
 
 			-- lsp for python
 			lspconfig.pyright.setup({

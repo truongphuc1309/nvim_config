@@ -29,3 +29,8 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+
+-- diagnostic
+keymap.set("n", "<leader>ds", vim.diagnostic.open_float)
+keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
+keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)

@@ -9,7 +9,7 @@ return {
 			-- add language you want to highlight in code
 			ensure_installed = {
 				"c",
-                "cpp",
+				"cpp",
 				"lua",
 				"vim",
 				"javascript",
@@ -18,11 +18,11 @@ return {
 				"html",
 				"java",
 				"json",
-                "python",
+				"python",
 			},
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },
 		})
-    end
+	end,
 }
