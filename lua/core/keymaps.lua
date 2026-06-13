@@ -4,7 +4,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 local options = { silent = true }
 
-
 -- Save file
 keymap.set("n", "<leader>ss", ":w<CR>")
 

@@ -1,11 +1,9 @@
 return {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-        require("catppuccin").setup({
-            flavour = "mocha",
-        })
-        vim.cmd.colorscheme"catppuccin"
-    end,
+	"truongphuc1309/cobalt2-nvim",
+	name = "cobalt2",
+	priority = 1000,
+	opts = {},
+	config = function()
+		vim.cmd.colorscheme("cobalt2")
+	end,
 }
