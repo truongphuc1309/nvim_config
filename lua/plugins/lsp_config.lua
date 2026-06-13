@@ -55,35 +55,17 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- get access to the lspconfig plugins functions
-			local lspconfig = require("lspconfig")
-
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local servers = { "lua_ls", "ts_ls", "tailwindcss", "pyright", "clangd" }
 
-			-- setup the lua language server
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
+			for _, server in ipairs(servers) do
+				vim.lsp.config(server, {
+					capabilities = capabilities,
+				})
+			end
 
-			-- setup the typescript language server
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
+			vim.lsp.enable(servers)
 
-			-- lsp for tailwindcss
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-			})
-
-			-- lsp for python
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-
-			-- lsp config for cpp
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
 			-- Set vim motion for <Space> + c + h to show code documentation about the code the cursor is currently over if available
 			vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
 			-- Set vim motion for <Space> + c + d to go where the code/variable under the cursor was defined
