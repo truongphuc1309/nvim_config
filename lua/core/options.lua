@@ -36,6 +36,10 @@ vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default regis
 vim.opt.splitright = true -- split vertical window to the right
 vim.opt.splitbelow = true -- split horizontal window to the bottom
 
+-- diff
+vim.opt.diffopt:append("algorithm:patience")
+vim.opt.diffopt:append("indent-heuristic")
+
 vim.opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- disable netrw at the very start of your init.lua
